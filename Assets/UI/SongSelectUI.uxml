@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:GroupBox style="height: 100%; flex-direction: row; align-items: stretch;">
+        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="height: auto; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; left: auto; width: 650px; right: auto;" />
+        <ui:GroupBox style="flex-wrap: nowrap; align-items: stretch; width: 293px;">
+            <ui:IMGUIContainer style="height: 196px;" />
+            <ui:Label text="Song" display-tooltip-when-elided="true" />
+            <ui:Label text="Artist" display-tooltip-when-elided="true" />
+            <ui:DropdownField label="Difficulty" index="-1" choices="Easy, Normal, Hard" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" />
+        </ui:GroupBox>
+    </ui:GroupBox>
+</ui:UXML>
