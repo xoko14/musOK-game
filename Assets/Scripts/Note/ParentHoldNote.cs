@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,8 +17,9 @@ public class ParentHoldNote : MonoBehaviour
     public Vector3 end;
 
     private float lineY = 0.1f;
+    private bool first = true;
 
-    void Start()
+    void Start2()
     {
         chart = GameObject.Find("Lane").GetComponent<LaneTest>().chart;
         startNote = transform.Find("LaneNoteS").gameObject;
@@ -62,7 +64,16 @@ public class ParentHoldNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(first)
+        {
+            try{
+                Start2();
+                first=false;
+            }
+            catch(NullReferenceException){
+                //Debug.Log("Not yet HoldNote");
+            }
+        }
     }
 
     private GameObject CreateLine(Vector3[] vectors, float width, float colliderWidth, Material material)
