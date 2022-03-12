@@ -63,7 +63,7 @@ public class LaneTest : MonoBehaviour
         PlayerSongStats.Instance.chart = chart;
         PlayerSongStats.Instance.SetTotalBells(chart.Bells.Count);
         PlayerSongStats.Instance.SetTotalFlicks(chart.RightFlicks.Count + chart.LeftFlicks.Count);
-        PlayerSongStats.Instance.SetTotalNotes(chart.Notes.Count);
+        PlayerSongStats.Instance.SetTotalNotes(chart.Notes.Count +chart.HoldNotes.Count);
         PlayerSongStats.Instance.CalculateScoreValues();
 
         DrawLines();
