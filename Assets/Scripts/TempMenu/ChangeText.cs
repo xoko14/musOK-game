@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class ChangeText : MonoBehaviour
 {
-    private Slider slider;
+    public Slider slider;
+    public string pref;
+
+    public float defaultVal;
     private bool antiexcept = false;
     private void Start()
     {
-        slider = GameObject.Find("Slider").GetComponent<Slider>();
-        float value = PlayerPrefs.GetFloat("audioDelay", 0);
+        float value = PlayerPrefs.GetFloat(pref, default);
         slider.value = value/0.01f;
         GetComponent<Text>().text = value.ToString();
         antiexcept = true;

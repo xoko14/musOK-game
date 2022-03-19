@@ -32,6 +32,7 @@ public class LaneTest : MonoBehaviour
 
     private void SetupLane()
     {
+        barSize*=SongSaver.SpeedMulti;
         chart = chartLoader.LoadChart(/*chartID*/ SongSaver.SongID, SongSaver.Difficulty, barSize);
         GameObject.Find("SongName").GetComponent<Text>().text = chart.SongInfo.title;
         GameObject.Find("Author").GetComponent<Text>().text = chart.SongInfo.artist;

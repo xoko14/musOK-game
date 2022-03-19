@@ -68,6 +68,7 @@ public class SongSelectionController : MonoBehaviour
         {
             SongSaver.SongID = Path.GetFileName(Path.GetDirectoryName(currentChart.FolderPath));
             SongSaver.Delay = PlayerPrefs.GetFloat("audioDelay", 0);
+            SongSaver.SpeedMulti = PlayerPrefs.GetFloat("chartSpeed", 1);
             SongSaver.Difficulty = selector.GetComponent<TMPro.TMP_Dropdown>().value switch
             {
                 0 => Difficulty.Easy,
