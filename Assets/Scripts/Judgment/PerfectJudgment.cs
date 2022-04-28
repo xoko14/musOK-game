@@ -16,6 +16,7 @@ public class PerfectJudgment : MonoBehaviour
     private LaneTest lt;
     private float judgmentWindow;
     private float judgmentWindowPerfect;
+    private string[] _noteTags = { "red_note", "green_note", "blue_note", "left_note", "right_note" };
 
     void Start()
     {
@@ -59,6 +60,20 @@ public class PerfectJudgment : MonoBehaviour
         {
 
             evaluateNote(c);
+        }
+    }
+
+    private void Update()
+    {
+        Vector3 centerBox = new Vector3(transform.position.x, transform.position.y, transform.position.z - judgmentWindow - 1);
+        Vector3 growBox = new Vector3(30, 2, judgmentWindow);
+        Collider[] failedNotes = Physics.OverlapBox(centerBox, growBox, Quaternion.identity);
+        foreach (Collider c in failedNotes)
+        {
+            if(_noteTags.Contains(c.tag))
+            {
+                Debug.Log($"Deleted {c.tag}");
+            }
         }
     }
 
