@@ -73,6 +73,7 @@ public class PerfectJudgment : MonoBehaviour
             if(_noteTags.Contains(c.tag))
             {
                 Debug.Log($"Deleted {c.tag}");
+                //Destroy(c.gameObject);
             }
         }
     }
