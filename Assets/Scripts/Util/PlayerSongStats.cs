@@ -110,7 +110,8 @@ public sealed class PlayerSongStats
     }
 
     public void CalculateScoreValues(){
-        noteScoreValue = scoreMax/(totalBells+totalFlicks+totalNotes);
+        var totalForScore = totalBells + totalFlicks + totalNotes;
+        noteScoreValue = scoreMax / (totalForScore == 0? scoreMax: totalForScore);
     }
 
     public void TakeDamage(int damage)
